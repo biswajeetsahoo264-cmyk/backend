@@ -5,7 +5,14 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Repository cloned successfully.'
+                checkout scm
+            }
+        }
+
+        stage('Workspace') {
+            steps {
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
 
